@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Code">
+      <UniqueIdentifier>{c4e4929b-1e5b-4dbe-b6ba-ff1ea8ea51cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Core">
+      <UniqueIdentifier>{49a8e6c2-1e9e-4a6a-8463-05b1b485e2dd}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\Code\Core\Core.h">
+      <Filter>Code\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Code\Core\Parameter.h">
+      <Filter>Code\Core</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\Code\Core\EntryPoint.cpp">
+      <Filter>Code\Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

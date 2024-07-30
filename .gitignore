@@ -1,0 +1,5 @@
+Workspace/Debug
+Workspace/x64
+*.user
+*.lib
+*.pdb
