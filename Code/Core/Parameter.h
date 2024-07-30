@@ -14,6 +14,8 @@ struct Parameter
 {
 public:
 
+	static const Parameter Free;
+
 	std::string name;
 	bool hasValue = false;
 
