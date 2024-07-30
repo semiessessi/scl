@@ -5,16 +5,29 @@
 
 #include <string>
 
+namespace SCL
+{
+
+// SE - NOTE: this order is not compact by C struct layout rules ... however it
+// is convenient for initialisation of the list defining the parameters
 struct Parameter
 {
 public:
 
 	std::string name;
-	std::string value;
+	bool hasValue = false;
 
-	bool hasValue;
-
-	void (*handler)(const Parameter&);
+	int (*handler)(const Parameter&, const std::string&) = nullptr;
 };
+
+struct ParameterInstance
+{
+public:
+
+	const Parameter& parameter;
+	std::string value;
+};
+
+}
 
 #endif

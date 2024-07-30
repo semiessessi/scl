@@ -1,4 +1,9 @@
 #include "Core.h"
+#include "Parameter.h"
+
+// SE - TODO: a better way to link with the project config. ffs.
+
+#include "../../Code/Core/Project_Config.h"
 
 #include <string>
 #include <vector>
@@ -6,7 +11,7 @@
 namespace SCL
 {
 
-int EntryPoint(const int argumentCount, const char* const* const arguments)
+int EntryPoint(const int argumentCount, const char* const* const arguments, const SCL::Parameter* const parameters)
 {
 	std::string currentParameter = "";
 	std::vector<std::string> inputs;
