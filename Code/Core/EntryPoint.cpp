@@ -128,7 +128,7 @@ int EntryPoint(const int argumentCount, const char* const* const arguments
 		puts(kSCLTitle);
 	}
 
-	return 0;
+	return Project_EntryPoint(parameters);
 }
 
 }
