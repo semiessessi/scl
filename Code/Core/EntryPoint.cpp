@@ -113,12 +113,23 @@ int EntryPoint(const int argumentCount, const char* const* const arguments
 		}
 	}
 
-	// now we have the parametes
+	// now we have the parameters
+	int worstWarning = 0;
 	for (size_t i = 0; i < parameters.size(); ++i)
 	{
 		if (parameters[i].parameter.handler != nullptr)
 		{
-			parameters[i].parameter.handler(parameters[i], parameters[i].value);
+			int returnValue =
+				parameters[i].parameter.handler(parameters[i], parameters[i].value);
+			if (returnValue < 0) // on fail, quit
+			{
+				return returnValue;
+			}
+
+			if (returnValue > worstWarning)
+			{
+				worstWarning = returnValue;
+			}
 		}
 	}
 
@@ -128,7 +139,19 @@ int EntryPoint(const int argumentCount, const char* const* const arguments
 		puts(kSCLTitle);
 	}
 
-	return Project_EntryPoint(parameters);
+	int returnValue = Project_EntryPoint(parameters);
+
+	if (returnValue < 0) // on fail, quit
+	{
+		return returnValue;
+	}
+
+	if (returnValue > worstWarning)
+	{
+		worstWarning = returnValue;
+	}
+
+	return worstWarning;
 }
 
 }
