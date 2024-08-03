@@ -19,7 +19,7 @@ public:
 	std::string name;
 	bool hasValue = false;
 
-	int (*handler)(const Parameter&, const std::string&) = nullptr;
+	int (*handler)(const struct ParameterInstance&, const std::string&) = nullptr;
 };
 
 struct ParameterInstance

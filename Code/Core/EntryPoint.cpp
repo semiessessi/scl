@@ -113,6 +113,21 @@ int EntryPoint(const int argumentCount, const char* const* const arguments
 		}
 	}
 
+	// now we have the parametes
+	for (size_t i = 0; i < parameters.size(); ++i)
+	{
+		if (parameters[i].parameter.handler != nullptr)
+		{
+			parameters[i].parameter.handler(parameters[i], parameters[i].value);
+		}
+	}
+
+	// show titles
+	if (kbSCLDisplayTitle == true)
+	{
+		puts(kSCLTitle);
+	}
+
 	return 0;
 }
 
